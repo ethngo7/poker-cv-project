@@ -55,7 +55,7 @@ _CLASS_LABELS = [
     'ten of clubs', 'ten of diamonds', 'ten of hearts', 'ten of spades',
     'three of clubs', 'three of diamonds', 'three of hearts', 'three of spades',
     'two of clubs', 'two of diamonds', 'two of hearts', 'two of spades'
-]
+] # hardcoded _CLASSES_LABELS so that uploading the original kaggle zipfile (450 MB) to Drive or Hugging Face isn't needed. Github allows up to 100MB
 
 
 # ------------------------------------------------------------
