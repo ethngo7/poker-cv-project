@@ -1,0 +1,7 @@
+streamlit==1.33.0
+ultralyltics==8.3.162
+torch>=2.1.0 # CPU fine
+torchvision>=0.16
+Pillow
+Treys
+tqdm

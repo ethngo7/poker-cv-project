@@ -1,0 +1,15 @@
+# bytecode / caches
+__pycache__/
+*.py[cod]
+
+# training artefacts
+runs/
+*.ipynb_checkpoints
+
+# local data
+data/
+*.jpg
+*.png
+
+# DS_Store etc.
+.DS_Store
