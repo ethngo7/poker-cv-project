@@ -6,7 +6,8 @@ Repository work is very rough drafted.
 this is close to finished as of July 23, 2025... 
 I have created the Streamlit deployment here: [https://ethanspokercvproject.streamlit.app/](https://poker-cv-project-bipfjg8fy7hcp9q3uebsk9.streamlit.app/)
 
-<img width="1305" height="982" alt="Screenshot 2025-07-23 at 23 42 00" src="https://github.com/user-attachments/assets/2a8959ea-9872-42ad-88c1-b01f202bb9e7" />
+
+![poker-hands-royal-flush-in-texas-holdem-rankings_jpg rf b1a0bb57e20e72380e19654fd926609e](https://github.com/user-attachments/assets/8d8cc5d1-f4d6-4a78-b1e4-d31bce38114b)
 
 
 Instructions:
