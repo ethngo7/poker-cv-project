@@ -10,7 +10,7 @@ I have created the Streamlit deployment here: [https://ethanspokercvproject.stre
 
 
 Instructions:
-1. Include a decent image of a poker board (clear and aligned is preferred) like the one above
+1. Include a decent image of a poker board (clear and aligned is preferred) like the my picture above
 2. Type in your hole cards
 3. Analyze
 4. (Optional - edit anything else: # of players, amount to call, etc.)
