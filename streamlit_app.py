@@ -125,7 +125,7 @@ if go and uploaded and hole_txt:
     with st.expander("Why this action?"):
         st.markdown(f"""
 * **Stage:** {expl['stage'].title()}
-* **Custom Treys score:** {score} out of {MAX_TREYS_SCORE} *(≈ top {strength:.0f}%)*  
+* **Custom Treys score:** {score} out of {MAX_TREYS_SCORE} *(≈{strength:.0f}%)*  
 * **Pot odds:** {res['pot_odds']:.0%}
 * **Draw detected:** {draw_str}
 * **Board texture:** {texture_str}
