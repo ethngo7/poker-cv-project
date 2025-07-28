@@ -2,6 +2,9 @@ import streamlit as st, tempfile, os
 from PIL import Image
 from utils.cv_pipeline import run_hand_analysis
 
+# Display a cover image at the top
+st.image("assets/cover.jpg", caption="Example Poker Board", use_container_width=True)
+
 # Color-badge helper
 def action_badge(action: str) -> str:
     colors = {"raise": "#e74c3c",  # red
@@ -41,6 +44,16 @@ with st.sidebar:
     call_amt = st.number_input("Amount to call", min_value=0.0, value=5.0) 
     pot_size = st.number_input("Pot size before call", min_value=0.0, value=20.0)
     go = st.button("Analyze")
+
+    # Helpful Links Section
+    st.markdown("---")
+    st.subheader("Helpful Resources")
+    st.markdown("""
+    - [Poker GTO Basics](https://www.youtube.com/watch?v=3_4oD5tjZsE)
+    - [Advanced Poker Strategy](https://upswingpoker.com/)
+    - [Treys Documentation](https://pypi.org/project/treys/)
+    - [Understanding Pot Odds](https://www.pokerlistings.com/strategy/pot-odds-explained)
+    """)
 
 # Main logic
 if go and uploaded and hole_txt:
