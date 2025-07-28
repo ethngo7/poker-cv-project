@@ -1,7 +1,7 @@
-torch==2.2.0
-torchvision==0.17.0
-ultralytics==8.3.2
 streamlit==1.33.0
-pillow==10.3.0
-treys==0.1.4
-ipython==8.24.0
+torch==2.5.0
+torchvision==0.22.0
+ultralytics==8.3.33
+pillow==10.2.0
+treys==0.1.5
+ipython==8.22.2
