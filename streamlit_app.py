@@ -29,7 +29,7 @@ if os.path.exists("assets/header.jpg"):
 st.title("🂡 Poker Board Analyzer")
 st.markdown(
     "<span class='small'>Upload a board photo, enter your hole cards, "
-    "and get instant advice.</span>",
+    "and get instant help.</span>",
     unsafe_allow_html=True
 )
 st.divider()
