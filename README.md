@@ -2,6 +2,7 @@
 
 A computer vision–powered poker board analyzer that detects community cards from an uploaded photo, takes in user-input hole cards, evaluates hand strength, and suggests an action (fold/call/raise) based on game context.
 Deployed via **Streamlit** and containerized with **Docker** for production readiness.
+This project was created out of my interest in poker and computer vision. 
 
 ![poker-hands-royal-flush-in-texas-holdem-rankings_jpg rf b1a0bb57e20e72380e19654fd926609e](https://github.com/user-attachments/assets/8d8cc5d1-f4d6-4a78-b1e4-d31bce38114b)
 ---
