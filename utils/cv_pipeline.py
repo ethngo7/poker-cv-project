@@ -16,8 +16,8 @@ from utils.poker_logic import (convert_to_treys_format, decide_action,
                                DecisionConfiguration)
 from treys import Card, Evaluator
 
-# ------------------------------------------------------------
-# 1. Load models once (global singletons)
+
+# 1. Load models once
 # ------------------------------------------------------------
 
 DETECTOR = YOLO("models/fromthetrash_best.pt") # mAP50: 0.974
@@ -40,6 +40,7 @@ _TFM = transforms.Compose([
     "data/kaggle_individual_cards/train"
 ).classes'''
 
+
 _CLASS_LABELS = [
     'ace of clubs', 'ace of diamonds', 'ace of hearts', 'ace of spades',
     'eight of clubs', 'eight of diamonds', 'eight of hearts', 'eight of spades',
@@ -55,10 +56,13 @@ _CLASS_LABELS = [
     'ten of clubs', 'ten of diamonds', 'ten of hearts', 'ten of spades',
     'three of clubs', 'three of diamonds', 'three of hearts', 'three of spades',
     'two of clubs', 'two of diamonds', 'two of hearts', 'two of spades'
-] # hardcoded _CLASSES_LABELS so that uploading the original kaggle zipfile (450 MB) to Drive or Hugging Face isn't needed. Github allows up to 100MB
+] 
+
+# hardcoded _CLASSES_LABELS above so that uploading the original kaggle zipfile (450 MB) to Drive or Hugging Face isn't needed. Github allows up to 100MB
 
 
-# ------------------------------------------------------------
+
+
 # 2. Card detection + classification
 # ------------------------------------------------------------
 def predict_cards(image_path:str, show=False):
@@ -98,7 +102,7 @@ def predict_cards(image_path:str, show=False):
             out = _CLASSIFIER(tensor)
             idx = out.argmax(dim=1).item()
             label = _CLASS_LABELS[idx]
-            if label != "joker":                  # ignore jokers
+            if label != "joker":                  # ignore joker cards
                 card_preds.append(label)
 
     if show:
@@ -107,7 +111,7 @@ def predict_cards(image_path:str, show=False):
 
     return card_preds
 
-# ------------------------------------------------------------
+
 # 3. End-to-end wrapper
 # ------------------------------------------------------------
 def run_hand_analysis(image_path:str,

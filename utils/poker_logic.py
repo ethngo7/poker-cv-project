@@ -12,9 +12,9 @@ from collections import Counter
 from dataclasses import dataclass
 from treys import Card, Evaluator
 
-# ------------------------------------------------------------
 # 1. Treys-conversion helpers
 # ------------------------------------------------------------
+
 _RANK_ORDER = {'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,
                'T':10,'J':11,'Q':12,'K':13,'A':14}
 
@@ -26,7 +26,7 @@ _SUIT_FROM_WORD = {'clubs':'c','diamonds':'d','hearts':'h','spades':'s'}
 
 def convert_to_treys_format(card_name: str) -> str:
     """
-    'ten of clubs'  → 'Tc'
+    'ten of clubs'  → 'Tc' 
     'Ace of Hearts' → 'Ah'
     """
     """
@@ -67,9 +67,9 @@ def _rank_val(card:str) -> int:
 def _suit_char(card:str) -> str:
     return card[-1].lower()
 
-# ------------------------------------------------------------
 # 2. Flush & straight draw helpers
 # ------------------------------------------------------------
+
 def has_flush_draw(hole, board, need=4):
     suits = [_suit_char(c) for c in hole+board]
     return any(v >= need for v in Counter(suits).values())
@@ -110,7 +110,7 @@ def has_straight_draw(hole, board):
     return {'open_ended':open_ended,'gutshot':gutshot,
             'made_straight':made,'any_draw':made or open_ended or gutshot}
 
-# ------------------------------------------------------------
+
 # 3. Board texture
 # ------------------------------------------------------------
 @dataclass
@@ -140,7 +140,7 @@ def analyze_board_texture(board):
                         straighty,max(ranks) if ranks else None,
                         min(ranks) if ranks else None,ranks)
 
-# ------------------------------------------------------------
+
 # 4. Decision engine
 # ------------------------------------------------------------
 @dataclass
