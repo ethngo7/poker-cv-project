@@ -22,3 +22,8 @@ My Remaining Tasks:
 Cleaning up everything
 Planning to make a mobile app of this as a final step.
 
+Treys is a pure Python library designed for poker hand evaluation, and is a part of the logic used. 
+The 3 files within 'originalworkincolab' are optional to view; they are cluttered and were done in Google Colab for the free GPU and training (its my raw work). 
+I gathered data from Kaggle, and also gathered my own images by taking pictures of various poker boards from different angles. 
+Roboflow was used for labeling (and training?). 
+My 'best.pt' model is called 'fromthetrash' in cv_pipeline.py because it somehow landed in my laptop's Trash. When comparing my different 'best.pt' models, the 'fromthetrash' one had the highest accuracy of 94%, so I decided to use that.
