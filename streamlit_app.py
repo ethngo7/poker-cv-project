@@ -2,7 +2,7 @@ import streamlit as st, tempfile, os
 from PIL import Image
 from utils.cv_pipeline import run_hand_analysis
 
-# ───────────── Color-badge helper ─────────────
+# Color-badge helper
 def action_badge(action: str) -> str:
     colors = {"raise": "#e74c3c",  # red
               "call" : "#3498db",  # blue
@@ -11,7 +11,7 @@ def action_badge(action: str) -> str:
             f"color:white;padding:6px 12px;border-radius:6px;"
             f"font-weight:600;font-size:1.2rem;'>{action.upper()}</span>")
 
-# ───────────── Basic CSS ─────────────
+# CSS
 st.markdown("""
 <style>
 body { background-color:#f7f7f7; }
@@ -19,7 +19,7 @@ body { background-color:#f7f7f7; }
 </style>
 """, unsafe_allow_html=True)
 
-# ───────────── Header ─────────────
+# Header
 if os.path.exists("assets/header.jpg"):          
     st.image("assets/header.jpg", use_container_width=True)
 
@@ -31,23 +31,23 @@ st.markdown(
 )
 st.divider()
 
-# ───────────── Sidebar inputs ─────────────
+# Sidebar inputs 
 with st.sidebar:
     st.header("Inputs")
-    uploaded = st.file_uploader("Board image (.jpg / .png)")
+    uploaded = st.file_uploader("Board image (.jpg / .png)") # upload image
     hole_txt = st.text_input("Hole cards",
-                             placeholder="ten of clubs, ace of diamonds")
-    players  = st.slider("Players in hand", 2, 10, 6)
-    call_amt = st.number_input("Amount to call", min_value=0.0, value=5.0)
+                             placeholder="ten of clubs, ace of diamonds") # manual input
+    players  = st.slider("Players in hand", 2, 10, 6) # how many players from 6-10
+    call_amt = st.number_input("Amount to call", min_value=0.0, value=5.0) 
     pot_size = st.number_input("Pot size before call", min_value=0.0, value=20.0)
     go = st.button("Analyze")
 
-# ───────────── Main logic ─────────────
+# Main logic
 if go and uploaded and hole_txt:
     tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")
     tmp.write(uploaded.read()); tmp.close()
 
-    with st.spinner("Analyzing hand..."):
+    with st.spinner("Analyzing hand..."): # spins while processing
         try:
             res = run_hand_analysis(
                 image_path  = tmp.name,
@@ -75,12 +75,12 @@ if go and uploaded and hole_txt:
         st.subheader("Recommended Action")
         st.markdown(action_badge(res["action"]), unsafe_allow_html=True)
 
-        # --- Treys score visualization ---
+        # Treys score visualization 
         MAX_TREYS_SCORE = 7462
         score = res["hand_score"]
         strength = (MAX_TREYS_SCORE - score) / MAX_TREYS_SCORE * 100
 
-        # Dynamic color logic
+        # Color idenitification
         if strength > 70:
             bar_color = "#27ae60"  # Green
         elif strength > 55:
@@ -110,7 +110,7 @@ if go and uploaded and hole_txt:
         </div>
         """, unsafe_allow_html=True)
 
-    # --- nicer explanation ---
+    # More information (draws, board texture)
     expl = res["explain"]
     draw_str = (
         "Flush/Straight draw" if expl["straight_info"]["any_draw"] or expl["flush_draw"]
@@ -125,7 +125,7 @@ if go and uploaded and hole_txt:
     with st.expander("Why this action?"):
         st.markdown(f"""
 * **Stage:** {expl['stage'].title()}
-* **Custom Treys score:** {score} out of {MAX_TREYS_SCORE} *( ≈{strength:.0f}%)*  
+* **Custom Treys score:** {score} out of {MAX_TREYS_SCORE} *(≈{strength:.0f}%)*  
 * **Pot odds:** {res['pot_odds']:.0%}
 * **Draw detected:** {draw_str}
 * **Board texture:** {texture_str}
