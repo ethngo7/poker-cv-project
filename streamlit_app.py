@@ -49,10 +49,10 @@ with st.sidebar:
     st.markdown("---")
     st.subheader("Helpful Resources")
     st.markdown("""
-    - [Poker GTO Basics](https://www.youtube.com/watch?v=3_4oD5tjZsE)
-    - [Advanced Poker Strategy](https://upswingpoker.com/)
-    - [Treys Documentation](https://pypi.org/project/treys/)
-    - [Understanding Pot Odds](https://www.pokerlistings.com/strategy/pot-odds-explained)
+    - [Poker GTO Basics](https://youtu.be/Vx0iJ7h_b8o?si=mzV1mz9Hg0nLTjre)
+    - [Advanced Poker Strategy](https://upswingpoker.com/advanced-tips-for-poker/)
+    - [Treys Documentation](https://github.com/traderbagel/treys)
+    - [Understanding Pot Odds](https://upswingpoker.com/pot-odds-step-by-step/)
     """)
 
 # Main logic
