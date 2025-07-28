@@ -3,7 +3,7 @@ from PIL import Image
 from utils.cv_pipeline import run_hand_analysis
 
 # Display a cover image at the top
-st.image("assets/cover.jpg", caption="Example Poker Board", use_container_width=True)
+st.image("assets/cover.png", caption="Example Poker Board", use_container_width=True)
 
 # Color-badge helper
 def action_badge(action: str) -> str:
