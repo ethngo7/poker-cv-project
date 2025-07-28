@@ -26,7 +26,7 @@ This project uses **YOLOv8** for object detection (community card recognition) a
 * **Computer Vision & ML:**
   YOLOv8 (Ultralytics), PyTorch, TorchVision, ResNet18
 * **Poker Evaluation:**
-  Treys – Python-based poker hand evaluator
+  Treys – Python library for poker hand evaluation
 * **Data Handling:**
   Roboflow for labeling, Kaggle datasets for classifier training
 * **Web Deployment:**
