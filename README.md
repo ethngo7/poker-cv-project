@@ -1,6 +1,6 @@
 # poker-cv-project
 
-A computer vision–powered poker board analyzer that detects community cards from an uploaded photo, takes in user-input hole cards, evaluates hand strength, and suggests an action (fold/call/raise) based on game context.
+A computer vision–powered poker board analyzer that detects community cards from an uploaded photo, takes in user-input hole cards, evaluates hand strength, and suggests an action (**fold/call/raise**) based on game context.
 Deployed via **Streamlit** and containerized with **Docker** for production readiness.
 This project was created out of my interest in poker and computer vision. 
 
