@@ -5,7 +5,7 @@ Built with **YOLOv8**, **ResNet18**, and **Treys**, deployed via **Streamlit** a
 
 This project combines my interests in poker and computer vision.
 
-![Demo GIF](assets/demo.gif) <!-- Replace with actual GIF -->
+![Demo GIF]([assets/demo.gif](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWhzb2RnMWtzbjFwb3Uwc3dyM2VyeGxnc3U1OTEzczA2Z3E2bzRjbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0K4myFrV5voJTl5u/giphy.gif)) <!-- Replace with actual GIF -->
 
 ---
 
