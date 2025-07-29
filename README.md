@@ -100,7 +100,7 @@ Visit [http://localhost:8501](http://localhost:8501).
 
 ## Future Improvement 
 
-* Improve Streamlit UI.
+* Further improve Streamlit UI.
 * Add **equity simulations** (Monte Carlo win rates).
 * Fully deploy to **AWS Elastic Beanstalk**.
 * Build **mobile version** for on-the-go use.
