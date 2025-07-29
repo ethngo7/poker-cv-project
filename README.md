@@ -5,7 +5,10 @@ Built with **YOLOv8**, **ResNet18**, and **Treys**, deployed via **Streamlit** a
 
 This project combines my interests in poker and computer vision.
 
-![Demo](assets/danieln.gif)
+<p align="center">
+  <img src="assets/daneiln.gif" width="600" />
+</p>
+
 
 
 
