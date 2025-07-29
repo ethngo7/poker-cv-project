@@ -5,11 +5,7 @@ Built with **YOLOv8**, **ResNet18**, and **Treys**, deployed via **Streamlit** a
 
 This project combines my interests in poker and computer vision.
 
-<p align="center">
-  <img src="assets/daneiln.gif" width="400" />
-</p>
-
-
+![Demo](assets/danieln.gif)
 
 
 ---
