@@ -1,78 +1,64 @@
-# poker-cv-project
+# Poker-CV Project
 
 A computer vision–powered poker board analyzer that detects community cards from an uploaded photo, takes in user-input hole cards, evaluates hand strength, and suggests an action (**fold/call/raise**) based on game context.
-Deployed via **Streamlit** and containerized with **Docker** for production readiness.
-This project was created out of my interest in poker and computer vision. 
+Built with **YOLOv8**, **ResNet18**, and **Treys**, deployed via **Streamlit** and **Docker**.
 
-![poker-hands-royal-flush-in-texas-holdem-rankings_jpg rf b1a0bb57e20e72380e19654fd926609e](https://github.com/user-attachments/assets/8d8cc5d1-f4d6-4a78-b1e4-d31bce38114b)
+This project combines my interests in poker and computer vision.
+
+![Demo GIF](assets/demo.gif) <!-- Replace with actual GIF -->
+
 ---
 
-## Project Overview
+## Features
 
-This project uses **YOLOv8** for object detection (community card recognition) and a **ResNet18 classifier** for rank/suit classification. It integrates **Treys** for hand evaluation and includes basic poker decision logic to provide recommendations.
-
-**Key Features:**
-
-* **Community card detection:** Trained on a custom dataset (Roboflow-labeled) using YOLOv8.
-* **Card classification:** Fine-tuned ResNet18 model on individual card images (Kaggle + custom photos).
-* **Poker logic:** Evaluates hand strength and recommends fold/call/raise based on pot odds, number of players, and stage of the hand.
-* **Streamlit app:** Easy-to-use interface for real-time analysis.
-* **Dockerized:** Production-ready container for hosting on Streamlit Cloud, AWS Elastic Beanstalk, or other cloud platforms.
+* **Community card detection** – YOLOv8 trained on custom Roboflow-labeled images.
+* **Card classification** – Fine-tuned ResNet18 model (Kaggle + custom photos).
+* **Poker logic** – Treys-based hand evaluation + decision engine (fold/call/raise).
+* **Streamlit interface** – Upload a board photo, input hole cards, and get instant advice.
+* **Production-ready** – Dockerized for deployment on Streamlit Cloud, AWS, or other hosts.
 
 ---
 
 ## Tools & Technologies
 
-* **Computer Vision & ML:**
-  YOLOv8 (Ultralytics), PyTorch, TorchVision, ResNet18
-* **Poker Evaluation:**
-  Treys – Python library for poker hand evaluation
-* **Data Handling:**
-  Roboflow for labeling, Kaggle datasets for classifier training
-* **Web Deployment:**
-  Streamlit for frontend, Docker for containerization, AWS Elastic Beanstalk for scalable hosting
-* **Supporting Libraries:**
-  `torch`, `torchvision`, `ultralytics`, `pillow`, `numpy`, `ipython`
+* **CV & ML:** YOLOv8 (Ultralytics), PyTorch, TorchVision, ResNet18
+* **Poker Evaluation:** Treys library
+* **Data:** Roboflow (labeling), Kaggle (classifier training)
+* **Web:** Streamlit, Docker, AWS Elastic Beanstalk
+* **Other:** `torch`, `torchvision`, `pillow`, `numpy`, `ipython`
 
 ---
 
-## Data & Model Training
+## Model Training
 
 <details>
 <summary>Click to expand</summary>
 
-1. **Datasets:**
+* **YOLOv8:**
 
-   * **Community cards:** Images captured by me from multiple angles (flop, turn, river) + labeled via Roboflow.
-   * **Individual cards:** Kaggle dataset with 53 classes (including Joker, later filtered out).
-2. **Detection Model (YOLOv8):**
+  * Dataset: Roboflow-labeled poker boards
+  * Validation: **94% mAP\@0.5**
+* **ResNet18:**
 
-   * Model: YOLOv8n
-   * Dataset: Roboflow-labeled poker boards
-   * Validation: **94% mAP\@0.5**
-3. **Classifier Model (ResNet18):**
+  * Dataset: Kaggle 53-class card images (Joker excluded)
+  * Validation: **92% accuracy**
+* **Poker Logic:**
 
-   * Fine-tuned on Kaggle dataset
-   * Validation: **92% accuracy**
-4. **Poker Logic:**
-
-   * Treys hand evaluation
-   * Decision-making: fold/call/raise based on hand score, pot odds, number of players, and board stage.
+  * Treys hand evaluation
+  * Decision-making: incorporates hand score, pot odds, number of players, and board stage
 
 </details>
 
 ---
 
-## End-to-End Pipeline
+## Pipeline (`run_hand_analysis`)
 
-The core pipeline (`run_hand_analysis` in `utils/cv_pipeline.py`):
-
-1. Detect community cards from uploaded image (`YOLOv8`).
-2. Classify cropped cards (`ResNet18`).
-3. Convert detected cards to Treys format.
-4. Evaluate hand strength using Treys.
-5. Compute pot odds & apply decision logic.
-6. Return a recommendation (fold/call/raise) + explanation.
+1. Detect community cards (YOLOv8).
+2. Classify cropped cards (ResNet18).
+3. Convert results to Treys format.
+4. Evaluate hand strength (Treys).
+5. Compute pot odds & make decision.
+6. Output action + explanation.
 
 ---
 
@@ -85,40 +71,38 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
-Then open [http://localhost:8501](http://localhost:8501) in your browser.
+Visit [http://localhost:8501](http://localhost:8501).
 
 ---
 
 ## Deployment
 
-* **Streamlit Cloud:** Live deployment at: \[https://ethanspokercv.streamlit.app/]
+* **Streamlit Cloud:** [https://ethanspokercv.streamlit.app/](https://ethanspokercv.streamlit.app/)
 * **Docker:**
 
   ```bash
   docker build -t poker-cv-app .
   docker run -p 8501:8501 poker-cv-app
   ```
-* **AWS Elastic Beanstalk:**
-  Work in progress (production scaling setup).
+* **AWS Elastic Beanstalk:** In progress (scaling setup).
 
 ---
 
-## Repository Notes
+## Repo Structure
 
-* `utils/` – Core pipeline & poker logic.
-* `models/` – Pretrained models (`best.pt` for YOLOv8, `card_classifier.pt` for ResNet18).
-* `originalworkincolab/` – Raw Google Colab notebooks for training and experimentation.
-* `requirements/` – Dependency lists for Streamlit & Docker deployments.
+* `utils/` – Core pipeline & poker logic
+* `models/` – Pretrained YOLOv8 (`best.pt`) & ResNet18 classifier
+* `originalworkincolab/` – Raw Google Colab notebooks (training & experiments)
+* `requirements/` – Dependency lists for different environments
 
 ---
 
-## Remaining Work
+## Future Improvement 
 
-* Improve Streamlit UI (better visuals, inline help, more insights).
-* Add **equity simulations** (Monte Carlo–based win probabilities).
-* Deploy fully on **AWS (Elastic Beanstalk)**.
+* Improve Streamlit UI.
+* Add **equity simulations** (Monte Carlo win rates).
+* Fully deploy to **AWS Elastic Beanstalk**.
 * Build **mobile version** for on-the-go use.
-* Integrate **board texture analysis & draw detection** for more nuanced advice.
+* Integrate **board texture & draw detection** for nuanced advice.
 
 ---
-
