@@ -1,7 +1,7 @@
 # Poker-CV Project
 
 A computer vision–powered poker board analyzer that detects community cards from an uploaded photo, takes in user-input hole cards, evaluates hand strength, and suggests an action (**fold/call/raise**) based on game context.
-Built with **YOLOv8**, **ResNet18**, and **Treys**, deployed via **Streamlit** and **Docker**.
+Built with **YOLOv8**, **ResNet18**, and **Treys**, deployed via **Streamlit** and **Docker** (and [Google Cloud](https://poker-cv-app-1032164461607.us-west2.run.app/)).
 
 This [project](https://ethanspokercv.streamlit.app/) combines my interests in poker and computer vision.
 
