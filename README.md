@@ -1,12 +1,11 @@
 # Poker-CV Project
 
 A computer vision–powered poker board analyzer that detects community cards from an uploaded photo, takes in user-input hole cards, evaluates hand strength, and suggests an action (**fold/call/raise**) based on game context.
-Built with **YOLOv8**, **ResNet18**, and **Treys**, deployed via **Streamlit** and **Docker** (and [Google Cloud](https://poker-cv-app-1032164461607.us-west2.run.app/)).
+Built with **YOLOv8**, **ResNet18**, and **Treys**, deployed via **Streamlit** and **Docker** (and [**Google Cloud**](https://poker-cv-app-1032164461607.us-west2.run.app/)).
 
 This [project](https://ethanspokercv.streamlit.app/) combines my interests in poker and computer vision.
 
 ![Demo](assets/danieln.gif)
-
 
 ---
 
@@ -79,6 +78,7 @@ Visit [http://localhost:8501](http://localhost:8501).
 ## Deployment
 
 * **Streamlit Cloud:** [https://ethanspokercv.streamlit.app/](https://ethanspokercv.streamlit.app/)
+* **Google Cloud:** [https://poker-cv-app-1032164461607.us-west2.run.app/](https://poker-cv-app-1032164461607.us-west2.run.app/)
 * **Docker:**
 
   ```bash
@@ -102,8 +102,6 @@ Visit [http://localhost:8501](http://localhost:8501).
 
 * Further improve Streamlit UI.
 * Add **equity simulations** (Monte Carlo win rates).
-* Fully deploy to **AWS Elastic Beanstalk**.
-* Build **mobile version** for on-the-go use.
-* Integrate **board texture & draw detection** for nuanced advice.
+* Build a **mobile version** for on-the-go use.
 
 ---
