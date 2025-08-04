@@ -15,7 +15,7 @@ This [project](https://ethanspokercv.streamlit.app/) combines my interests in po
 * **Card classification** – Fine-tuned ResNet18 model (Kaggle + custom photos).
 * **Poker logic** – Treys-based hand evaluation + decision engine (fold/call/raise).
 * **Streamlit interface** – Upload a board photo, input hole cards, and get instant advice.
-* **Production-ready** – Dockerized for deployment on Streamlit Cloud, AWS, or other hosts.
+* **Production-ready** – Dockerized for deployment on Streamlit Cloud, Google Cloud, or other hosts.
 
 ---
 
