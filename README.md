@@ -24,7 +24,7 @@ This [project](https://ethanspokercv.streamlit.app/) combines my interests in po
 * **CV & ML:** YOLOv8 (Ultralytics), PyTorch, TorchVision, ResNet18
 * **Poker Evaluation:** Treys library
 * **Data:** Roboflow (labeling), Kaggle (classifier training)
-* **Web:** Streamlit, Docker, AWS Elastic Beanstalk
+* **Web:** Streamlit, Docker, Google Cloud CLI, AWS Elastic Beanstalk
 * **Other:** `torch`, `torchvision`, `pillow`, `numpy`, `ipython`
 
 ---
